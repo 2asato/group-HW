@@ -30,6 +30,7 @@ app.controller('MyController', ['$http', function($http){
           }
       }).then(
           function(response){
+            console.log(response);
               controller.getBeer();
           },
           function(err){
