@@ -14,18 +14,18 @@
 
     <ul>
 
-      <li ng-repeat='beer in ctrl.beers'>{{varietal}}: {{brand}}: {{name}}: {{abv}}: ></li>
+      <li ng-repeat='beer in ctrl.beers'>{{beer.varietal}}: {{beer.brand}}: {{beer.name}}: {{beer.abv}} </li>
     </ul>
 
 
-    <form>
+    <form ng-submit='ctrl.createBeer();'>
       {{ctrl.varietal}}*******{{ctrl.brand}}
-      {{ctrl.name}}********{{ctrl.abv}}
+      {{ctrl.name}}********{{ctrl.abv}}<br/>
 
-      <input type="text" ng-model="ctrl.varietal" placeholder="varietal" />
-      <input type="text" ng-model="ctrl.brand" placeholder="brand" />
-      <input type="text" ng-model="ctrl.name" placeholder="name" />
-      <input type="text" ng-model="ctrl.abv" placeholder="abv" />
+      <input type="text" ng-model="ctrl.varietal" placeholder="varietal" /><br/>
+      <input type="text" ng-model="ctrl.brand" placeholder="brand" /><br/>
+      <input type="text" ng-model="ctrl.name" placeholder="name" /><br/>
+      <input type="text" ng-model="ctrl.abv" placeholder="abv" /><br/>
        <input type="submit" value="Submit a New Beer"/>
     </form>
 
