@@ -29,6 +29,18 @@ h2{
   margin-top: -61px;
 
 }
+.nav-links {
+  display: inline;
+  text-decoration: none;
+  font-family: 'Raleway', sans-serif;
+  font-size: 22px;
+  font-weight:500;
+  color: rgb(26, 13, 0);
+  padding: 30px;
+  margin: auto;
+  text-align: center;
+  margin-left: 125px;
+}
 .ang-text {
   color: rgb(0, 0, 0);
   font-size: 20px;
@@ -69,6 +81,7 @@ li {
   border: solid 1px rgb(0, 0, 0);
 }
 .input {
+  font-family: 'Raleway', sans-serif;
   background-color:  rgba(198, 140, 83, .5);
   width: 160px;
   height: 30px;
@@ -79,7 +92,4 @@ li {
 }
 .edit-form {
   padding-top: 50px;
-}
-.forms {
-
 }

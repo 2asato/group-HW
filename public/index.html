@@ -4,50 +4,96 @@
     <meta charset="utf-8">
     <title></title>
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/css/app.css" />
+    <link rel="stylesheet" href="app.css" />
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,600,700,800" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js" charset="utf-8"></script>
     <script src="/js/app.js" charset="utf-8"></script>
   </head>
 
   <body ng-controller="MyController as ctrl">
 
+    <div class="page-header">
+    </div>
     <header>
       <h1>Beer Bier Beoir Birra</h1>
       <h2>Craft Beer Club</h2>
     </header>
 
+    <nav class="nav-bar">
+
+        <h4 class="nav-links">ABOUT US</h4>
+        <h4 class="nav-links">OUR WIKI</h4>
+        <h4 class="nav-links">CREATE YOUR OWN BBBB COMMUNITY</h4>
+
+
+    </nav>
+
+    <div class="clearfix">
+    <div class="row">
+      <div class="col-xs-6 col-md-3">
+        <a href="#" class="thumbnail">
+          <img src="https://www.beersyndicate.com/images/beerLabels/label_thumb_13232001000438_front.jpg" alt="not">
+        </a>
+      </div>
+      <div class="col-xs-6 col-md-3">
+        <a href="#" class="thumbnail">
+          <img src="https://s-media-cache-ak0.pinimg.com/236x/7f/f8/97/7ff897b91c7932a8dc372539e28e861d--dreams-beer-labels.jpg" alt="not">
+        </a>
+      </div>
+      <div class="col-xs-6 col-md-3">
+        <a href="#" class="thumbnail">
+          <img src="https://s-media-cache-ak0.pinimg.com/236x/ca/5b/5b/ca5b5b358a43a6f90acf96753a1a52ed--beer-labels-indie.jpg" alt="not">
+        </a>
+      </div>
+    </div>
+    </div>
           <ul>
+            <div class="ang-text">
 
-            <li ng-repeat='beer in ctrl.beers'>{{beer.varietal}}:       {{beer.brand}}: {{beer.name}}: {{beer.abv}}
-                <button ng-click='ctrl.deleteBeer(beer)'>Delete</button>
-                <button ng-click='ctrl.toggleView();'>Edit</button>
-            </li>
-            <form ng-submit='ctrl.editBeer(beer);' ng-hide='ctrl.toggle'>
-              {{ctrl.varietal}}*******{{ctrl.brand}}
-              {{ctrl.name}}********{{ctrl.abv}}<br/>
+              <form class="forms" ng-submit='ctrl.createBeer();'>
 
-              <input type="text" ng-model="ctrl.varietal" placeholder="varietal" /><br/>
-                <input type="text" ng-model="ctrl.brand" placeholder="brand" /><br/>
-                <input type="text" ng-model="ctrl.name" placeholder="name" /><br/>
-                <input type="text" ng-model="ctrl.abv" placeholder="abv" /><br/>
-                 <input type="submit" value="Edit Beer"/>
+                <div class='clearfix'>
+                <h3 class="beer-captions">Beers That People Are Excited About: </h3>
+
+                {{ctrl.varietal}}:     {{ctrl.brand}}:
+                {{ctrl.name}}:         {{ctrl.abv}}:
+                </div>
+
+                <input class='input' type="text" ng-model="ctrl.varietal" placeholder="varietal" /><br/>
+                <input class='input'type="text" ng-model="ctrl.brand" placeholder="brand" /><br/>
+                <input class='input'type="text" ng-model="ctrl.name" placeholder="name" /><br/>
+                <input class='input'type="text" ng-model="ctrl.abv" placeholder="abv" /><br/>
+                <input class='input'type="submit" value="Submit a New Beer"/><br/><br/>
               </form>
 
+              <h3 class="beer-captions">Edit Your Beer Entry Here:: </h3>
+
+              <li ng-repeat='beer in ctrl.beers'>
+
+                {{beer.varietal}}:   {{beer.brand}}: {{beer.name}}: {{beer.abv}}:
+
+                <button class="buttons" ng-click='ctrl.deleteBeer(beer)'>Delete</button>
+                <button class="buttons" ng-click='ctrl.toggleView();'>Edit</button>
+              </li>
+
+              <div class="edit-form>"
+                <form ng-submit='ctrl.editBeer(beer);' ng-hide='ctrl.toggle'>
+                  <div class='clearfix'>
+
+                  {{ctrl.varietal}}:       {{ctrl.brand}}:
+                    {{ctrl.name}}:           {{ctrl.abv}}:<br/>
+
+                    <input class='input' type="text" class="edit-input-text"  ng-model="ctrl.varietal" placeholder="varietal" /><br/>
+                    <input class='input' type="text" ng-model="ctrl.brand" placeholder="brand" /><br/>
+                    <input class='input' type="text" ng-model="ctrl.name" placeholder="name" /><br/>
+                    <input class='input' type="text" ng-model="ctrl.abv" placeholder="abv" /><br/>
+                     <input class='input' type="submit" value="Edit Beer"/>
+                  </form>
+
             </ul>
+              </div>
 
+          </div>
 
-
-            <form ng-submit='ctrl.createBeer();'>
-              {{ctrl.varietal}}*******{{ctrl.brand}}
-              {{ctrl.name}}********{{ctrl.abv}}<br/>
-
-              <input type="text" ng-model="ctrl.varietal" placeholder="varietal" /><br/>
-              <input type="text" ng-model="ctrl.brand" placeholder="brand" /><br/>
-              <input type="text" ng-model="ctrl.name" placeholder="name" /><br/>
-              <input type="text" ng-model="ctrl.abv" placeholder="abv" /><br/>
-               <input type="submit" value="Submit a New Beer"/>
-            </form>
-
-
-          </body>
+        </body>
 </html>
