@@ -16,8 +16,21 @@
 
       <li ng-repeat='beer in ctrl.beers'>{{beer.varietal}}:       {{beer.brand}}: {{beer.name}}: {{beer.abv}}
           <button ng-click='ctrl.deleteBeer(beer)'>Delete</button>
+          <button ng-click='ctrl.toggleView();'>Edit</button>
       </li>
+      <form ng-submit='ctrl.editBeer(beer);' ng-hide='ctrl.toggle'>
+        {{ctrl.varietal}}*******{{ctrl.brand}}
+        {{ctrl.name}}********{{ctrl.abv}}<br/>
+
+        <input type="text" ng-model="ctrl.varietal" placeholder="varietal" /><br/>
+        <input type="text" ng-model="ctrl.brand" placeholder="brand" /><br/>
+        <input type="text" ng-model="ctrl.name" placeholder="name" /><br/>
+        <input type="text" ng-model="ctrl.abv" placeholder="abv" /><br/>
+         <input type="submit" value="Edit Beer"/>
+      </form>
+
     </ul>
+
 
 
     <form ng-submit='ctrl.createBeer();'>

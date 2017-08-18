@@ -1,6 +1,7 @@
 const app = angular.module('MyApp', []);
 
 app.controller('MyController', ['$http', function($http){
+    let newBeer = '';
     const controller = this;
     // function to get beer data
     this.getBeer = function(){
@@ -42,7 +43,7 @@ app.controller('MyController', ['$http', function($http){
     this.editBeer = function(beer){
       $http({
           method: 'PUT',
-          url: '/beer/' + beer._id,
+          url: '/beer/' + newBeer._id,
           data: {
               varietal: this.updatedVarietal,
               brand: this.updatedBrand,
@@ -72,5 +73,18 @@ app.controller('MyController', ['$http', function($http){
             }
         )
     }
+    this.toggle           = true;
+
+//on load see regions and new form
+//on record view, click record, hide records, show one record on left
+//record will show on the left, regions will hide
+//form will show on the right, new form will hide
+//on update/delete form will hide, regions show, new show
+//NOTE: Toggle views by clicking on <h1>
+
+
+this.toggleView =  () => {
+  this.toggle = !this.toggle;
+};
     this.getBeer();
 }])
