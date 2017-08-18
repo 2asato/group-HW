@@ -11,7 +11,6 @@ app.controller('MyController', ['$http', function($http){
           url: '/beer',
       }).then(
           function(response){
-            // console.log(response);
               controller.beers = response.data;
           },
           function(error){
@@ -28,7 +27,7 @@ app.controller('MyController', ['$http', function($http){
               varietal: this.varietal,
               brand: this.brand,
               name: this.name,
-              abv: this.abv,
+              abv: this.abv
           }
       }).then(
           function(response){
@@ -44,16 +43,23 @@ app.controller('MyController', ['$http', function($http){
     this.editBeer = function(beer){
       $http({
           method: 'PUT',
-          url: '/beer/' + beer._id,
+
+          url: '/beer/' + newBeer._id,      
           data: {
               varietal: this.updatedVarietal,
               brand: this.updatedBrand,
               name: this.updatedName,
-              abv: this.updatedAbv,
+              abv: this.updatedAbv
+          }
+      }).then(
+          function(response){
+
+     
           }
       }).then(
           function(response){
             console.log(response);
+
             controller.getBeer();
         },
           function(err){
