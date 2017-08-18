@@ -22,7 +22,7 @@ router.delete("/:id", (req,res) => {
 });
 
 router.put("/:id", (req,res) => {
-  Beer.findByIdAndUpdate(req.params.id, req.body,(err, updatedBeer) => {
+  Beer.findByIdAndUpdate(req.params.id, req.body, (err, updatedBeer) => {
     res.json(updatedBeer);
   });
 });

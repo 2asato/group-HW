@@ -1,7 +1,7 @@
 const app = angular.module('MyApp', []);
 
 app.controller('MyController', ['$http', function($http){
-    let newBeer;
+    let newBeer = '';
     const controller = this;
     // function to get beer data
     this.getBeer = function(){
@@ -43,7 +43,8 @@ app.controller('MyController', ['$http', function($http){
     this.editBeer = function(beer){
       $http({
           method: 'PUT',
-          url: '/beer/' + newBeer._id,
+
+          url: '/beer/' + newBeer._id,      
           data: {
               varietal: this.updatedVarietal,
               brand: this.updatedBrand,
@@ -52,6 +53,13 @@ app.controller('MyController', ['$http', function($http){
           }
       }).then(
           function(response){
+
+     
+          }
+      }).then(
+          function(response){
+            console.log(response);
+
             controller.getBeer();
         },
           function(err){

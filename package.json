@@ -1,0 +1,25 @@
+{
+  "name": "group-hw",
+  "version": "1.0.0",
+  "description": "paired programming assignment",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stefanispayde/group-HW.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stefanispayde/group-HW/issues"
+  },
+  "homepage": "https://github.com/stefanispayde/group-HW#readme",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.4",
+    "mongoose": "^4.11.7"
+  }
+}
