@@ -14,7 +14,9 @@
 
     <ul>
 
-      <li ng-repeat='beer in ctrl.beers'>{{beer.varietal}}: {{beer.brand}}: {{beer.name}}: {{beer.abv}} </li>
+      <li ng-repeat='beer in ctrl.beers'>{{beer.varietal}}:       {{beer.brand}}: {{beer.name}}: {{beer.abv}}
+          <button ng-click='ctrl.deleteBeer(beer)'>Delete</button>
+      </li>
     </ul>
 
 
