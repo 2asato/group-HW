@@ -13,4 +13,4 @@ This app allows users to enter a beer club where they taste and write up differe
 
 Mongo, Express, Angular, and Node were used to create CRUD routes.
 
-In time, at least 2 other model will be added, one for users including full authentication,and the other for posting to other's pages. Users can form groups, much like a social media site, and add to the app's growing wiki section.
+In time, at least 2 other model will be added, one for users including full authentication,and the other for posting to other's pages. Users can form groups, much like a social media site, and add to the app's growing wiki section. In the Beer Club's wiki, there will be a photo gallery as well to show the different beers and their labels.
