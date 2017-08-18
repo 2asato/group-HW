@@ -75,15 +75,7 @@ app.controller('MyController', ['$http', function($http){
             }
         )
     }
-    this.toggle           = true;
-
-//on load see regions and new form
-//on record view, click record, hide records, show one record on left
-//record will show on the left, regions will hide
-//form will show on the right, new form will hide
-//on update/delete form will hide, regions show, new show
-//NOTE: Toggle views by clicking on <h1>
-
+    this.toggle = true;
 
 this.toggleView =  () => {
   this.toggle = !this.toggle;
